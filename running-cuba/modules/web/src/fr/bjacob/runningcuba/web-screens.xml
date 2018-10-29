@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <screen id="runningcuba$Runner.edit"
+            template="fr/bjacob/runningcuba/web/runner/runner-edit.xml"/>
+    <screen id="runningcuba$Runner.browse"
+            template="fr/bjacob/runningcuba/web/runner/runner-browse.xml"/>
+</screen-config>

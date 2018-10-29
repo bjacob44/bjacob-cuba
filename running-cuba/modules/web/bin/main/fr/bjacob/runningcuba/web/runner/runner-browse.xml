@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="fr.bjacob.runningcuba.web.runner.RunnerBrowse"
+        focusComponent="runnersTable"
+        lookupComponent="runnersTable"
+        messagesPack="fr.bjacob.runningcuba.web.runner">
+    <dsContext>
+        <groupDatasource id="runnersDs"
+                         class="fr.bjacob.runningcuba.entity.Runner"
+                         view="runner-view">
+            <query>
+                <![CDATA[select e from runningcuba$Runner e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="runnersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="runnersTable"
+                datasource="runnersDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="runnersTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="nom"/>
+            </columns>
+            <rows datasource="runnersDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="runnersTable.create"/>
+                <button id="editBtn"
+                        action="runnersTable.edit"/>
+                <button id="removeBtn"
+                        action="runnersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

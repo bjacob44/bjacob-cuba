@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="fr.bjacob.runningcuba.web.runner.RunnerEdit"
+        datasource="runnerDs"
+        focusComponent="fieldGroup"
+        messagesPack="fr.bjacob.runningcuba.web.runner">
+    <dsContext>
+        <datasource id="runnerDs"
+                    class="fr.bjacob.runningcuba.entity.Runner"
+                    view="runner-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="runnerDs">
+            <column width="250px">
+                <field property="nom"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               height="100%"
+               screen="editWindowActions"/>
+    </layout>
+</window>
